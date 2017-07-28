@@ -6,7 +6,7 @@ feature 'reviewing' do
   scenario 'allows users to leave a review via a form' do
     visit '/restaurants'
     click_link 'Review Poppies'
-    fill_in "thoughts", with: "food coma"
+    fill_in "Thoughts", with: "food coma"
     select '4', from: 'Rating'
     click_button 'Leave Review'
 
