@@ -48,13 +48,13 @@ RSpec.describe RestaurantsController, type: :controller do
   describe "PUT /update" do
     before { put :update, params: { id: dirty_burger.id, restaurant: { name: "Dirty Burger",
       description: "Best burgers in London" } } }
-  end
 
-  it "Redirects to /restaurants" do
+    it "Redirects to /restaurants" do
+      expect(response).to redirect_to(restaurants_path)
+    end
 
-  end
-
-  it "Updates a restaurant entry" do
-
+    it "Updates a restaurant entry" do
+      expect(Restaurant.find_by(description: "Best burgers in London")).to be
+    end
   end
 end
